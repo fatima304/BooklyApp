@@ -18,10 +18,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           const IconButton(
             onPressed: null,
-            icon: Icon(
-              FontAwesomeIcons.magnifyingGlass,
-              color: Colors.white,
-            ),
+            icon: Icon(FontAwesomeIcons.magnifyingGlass, color: Colors.white),
           ),
         ],
       ),
