@@ -1,9 +1,8 @@
-import 'package:bookly_app/features/onboarding_screens/presentation/views/onboarding_screen.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly_app/core/utlis/assets_file.dart';
-import 'package:bookly_app/features/home/data/presentation/views/home_view.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/slide_text.dart';
+import 'package:bookly_app/features/onboarding_screens/presentation/views/onboarding_screen.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
