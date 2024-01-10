@@ -5,13 +5,17 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class RatingWidget extends StatelessWidget {
   const RatingWidget({
     super.key,
+    this.mainAxisAlignment = MainAxisAlignment.start,
   });
+
+  final MainAxisAlignment mainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 16),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Icon(
             FontAwesomeIcons.solidStar,
@@ -28,12 +32,11 @@ class RatingWidget extends StatelessWidget {
           const SizedBox(
             width: 5,
           ),
-          Text(
-            '(2390)',
-            style: Styles.textStyle14.copyWith(
-              color: const Color(
-                0xff707070,
-              ),
+          const Opacity(
+            opacity: 0.5,
+            child: Text(
+              '(2390)',
+              style: Styles.textStyle16,
             ),
           ),
         ],

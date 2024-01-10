@@ -25,10 +25,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(
-        () => OnBoarding(),
-        transition: Transition.fade,
-        duration: const Duration(seconds: 2),
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => OnBoarding(),
+        ),
       );
     });
   }

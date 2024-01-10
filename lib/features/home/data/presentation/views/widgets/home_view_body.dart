@@ -22,12 +22,12 @@ class HomeViewBody extends StatelessWidget {
             padding: EdgeInsets.only(top: 16, left: 10),
             child: Text(
               'Best Seller',
-              style: Styles.textStyle18,
+              style: Styles.textStyle20,
             ),
           ),
         ),
         SliverFillRemaining(
-          child: BestBookItemListView(),
+          child: BookItemListView(),
         ),
       ],
     );
