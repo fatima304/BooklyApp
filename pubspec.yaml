@@ -37,11 +37,12 @@ dependencies:
   flutter_onboard: ^2.0.0
   font_awesome_flutter: ^10.6.0
   get: ^4.6.6
+  dio: ^5.4.0
   go_router: ^13.0.1
   google_fonts: ^6.1.0
 
 dev_dependencies:
-  dio: ^5.4.0
+  
   flutter_test:
     sdk: flutter
 
