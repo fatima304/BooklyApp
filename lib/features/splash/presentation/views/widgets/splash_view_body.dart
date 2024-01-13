@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly_app/core/utlis/assets_file.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/slide_text.dart';
