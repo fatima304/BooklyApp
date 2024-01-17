@@ -45,7 +45,9 @@ class SearchResult extends StatelessWidget {
       itemBuilder: (context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
-          child: NewsetBookItem(),
+          child: NewsetBookItem(
+              imageUrl:
+                  'https://www.google.com/url?sa=i&url=https%3A%2F%2Fposterfoundry.com%2Fharry-potter-and-the-deathly-hallows-book-cover-poster-24x36%2F&psig=AOvVaw1Ty3IcsvN0Jd3tYMmh_XA4&ust=1705585927780000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCIiFjfPI5IMDFQAAAAAdAAAAABAY'),
         );
       },
     );

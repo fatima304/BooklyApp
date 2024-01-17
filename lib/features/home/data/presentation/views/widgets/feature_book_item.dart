@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class FeatureBookItem extends StatelessWidget {
   const FeatureBookItem({super.key, required this.imageUrl});
@@ -7,21 +8,19 @@ class FeatureBookItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 2.3 / 4,
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.35,
-        width: 120,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(
-            20,
-          ),
-          image: DecorationImage(
-            fit: BoxFit.fill,
-            image: NetworkImage(
-              imageUrl,
-            ),
-          ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(
+        20,
+      ),
+      child: AspectRatio(
+        aspectRatio: 2.3 / 4,
+        child: CachedNetworkImage(
+          imageUrl: imageUrl,
+          fit: BoxFit.fill,
+          placeholder: (context, url) =>
+              const Center(child: CircularProgressIndicator()),
+          errorWidget: (context, url, error) =>
+              const Icon(Icons.access_alarm_outlined),
         ),
       ),
     );

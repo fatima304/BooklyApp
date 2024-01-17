@@ -1,4 +1,5 @@
 import 'package:bookly_app/features/home/data/presentation/views/book_details_view.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly_app/core/utlis/style.dart';
 import 'package:bookly_app/core/utlis/constance.dart';
@@ -6,7 +7,9 @@ import 'package:bookly_app/core/utlis/assets_file.dart';
 import 'package:bookly_app/features/home/data/presentation/views/widgets/book_rating.dart';
 
 class NewsetBookItem extends StatelessWidget {
-  const NewsetBookItem({super.key});
+  const NewsetBookItem({super.key, required this.imageUrl});
+
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -25,21 +28,19 @@ class NewsetBookItem extends StatelessWidget {
         height: 120,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 2.7 / 4,
-              child: Container(
-                height: MediaQuery.of(context).size.height * 0.35,
-                width: 120,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    20,
-                  ),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(
-                      AssetsData.testImage,
-                    ),
-                  ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(
+                20,
+              ),
+              child: AspectRatio(
+                aspectRatio: 2.3 / 4,
+                child: CachedNetworkImage(
+                  imageUrl: imageUrl,
+                  fit: BoxFit.fill,
+                  placeholder: (context, url) =>
+                      const Center(child: CircularProgressIndicator()),
+                  errorWidget: (context, url, error) =>
+                      const Icon(Icons.access_alarm_outlined),
                 ),
               ),
             ),
