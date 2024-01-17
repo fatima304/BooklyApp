@@ -16,7 +16,9 @@ class DetailsBookSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.27),
-          child: const FeatureBookItem(),
+          child: const FeatureBookItem(
+              imageUrl:
+                  'https://www.google.com/url?sa=i&url=https%3A%2F%2Fposterfoundry.com%2Fharry-potter-and-the-deathly-hallows-book-cover-poster-24x36%2F&psig=AOvVaw1Ty3IcsvN0Jd3tYMmh_XA4&ust=1705585927780000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCIiFjfPI5IMDFQAAAAAdAAAAABAY'),
         ),
         const SizedBox(
           height: 20,
