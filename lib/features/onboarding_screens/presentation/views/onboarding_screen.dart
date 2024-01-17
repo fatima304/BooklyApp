@@ -123,11 +123,11 @@ class OnBoarding extends StatelessWidget {
 
 final List<OnBoardModel> onBoardData = [
   const OnBoardModel(
-      imgUrl: 'assets/images/1.jpeg',
+      imgUrl: 'assets/images/1.png',
       title: "Start your\n Journey with Books",
       description: ' A World of Free Books Awaits You'),
   const OnBoardModel(
-    imgUrl: "assets/images/3.png",
+    imgUrl: "assets/images/2.jpg",
     title: "Discover New Titles",
     description: "Endless Choices, Limitless Adventures",
   ),

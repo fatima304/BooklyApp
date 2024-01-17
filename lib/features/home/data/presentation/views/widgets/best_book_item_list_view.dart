@@ -12,7 +12,7 @@ class BookItemListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return const Padding(
           padding: EdgeInsets.only(left: 10, bottom: 16),
-          child: BestBookItem(),
+          child: NewsetBookItem(),
         );
       },
     );

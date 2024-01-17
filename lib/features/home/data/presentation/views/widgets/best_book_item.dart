@@ -5,8 +5,8 @@ import 'package:bookly_app/core/utlis/constance.dart';
 import 'package:bookly_app/core/utlis/assets_file.dart';
 import 'package:bookly_app/features/home/data/presentation/views/widgets/book_rating.dart';
 
-class BestBookItem extends StatelessWidget {
-  const BestBookItem({super.key});
+class NewsetBookItem extends StatelessWidget {
+  const NewsetBookItem({super.key});
 
   @override
   Widget build(BuildContext context) {
