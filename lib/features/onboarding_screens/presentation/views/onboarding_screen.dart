@@ -1,7 +1,8 @@
-import 'package:bookly_app/core/utlis/constance.dart';
-import 'package:bookly_app/features/home/data/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_onboard/flutter_onboard.dart';
+import 'package:bookly_app/core/utlis/constance.dart';
+import 'package:bookly_app/features/onboarding_screens/presentation/views/widgets/onboarding_model.dart';
+import 'package:bookly_app/features/onboarding_screens/presentation/views/widgets/onboarding_buttons.dart';
 
 class OnBoarding extends StatelessWidget {
   final PageController _pageController = PageController();
@@ -22,32 +23,15 @@ class OnBoarding extends StatelessWidget {
           letterSpacing: 1,
         ),
         descriptionStyles: const TextStyle(
-            fontSize: 16, color: Colors.grey, fontWeight: FontWeight.w500),
+            fontSize: 16, color: Colors.grey, fontWeight: FontWeight.w600),
         pageIndicatorStyle: const PageIndicatorStyle(
           width: 100,
-          inactiveColor: Color.fromARGB(255, 122, 93, 176),
-          activeColor: kPrimaryColor,
+          inactiveColor: Color.fromARGB(255, 19, 28, 152),
+          activeColor: Color(0xff0c136b),
           inactiveSize: Size(4, 4),
           activeSize: Size(8, 8),
         ),
-        skipButton: TextButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const HomeView(),
-              ),
-            );
-          },
-          child: const Text(
-            "Skip",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: kPrimaryColor,
-            ),
-          ),
-        ),
+        skipButton: const SkipButton(),
         nextButton: OnBoardConsumer(
           builder: (context, ref, child) {
             final state = ref.watch(onBoardStateProvider);
@@ -56,51 +40,7 @@ class OnBoarding extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  state.isLastPage
-                      ? GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const HomeView(),
-                              ),
-                            );
-                          },
-                          child: Container(
-                            width: 150,
-                            height: 40,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(30),
-                              color: kPrimaryColor,
-                            ),
-                            child: const Text(
-                              "Done",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        )
-                      : Container(
-                          width: 150,
-                          height: 40,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: kPrimaryColor,
-                          ),
-                          child: const Text(
-                            "Next",
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        )
+                  state.isLastPage ? const DoneButton() : const NextButton()
                 ],
               ),
             );
@@ -120,15 +60,3 @@ class OnBoarding extends StatelessWidget {
     } else {}
   }
 }
-
-final List<OnBoardModel> onBoardData = [
-  const OnBoardModel(
-      imgUrl: 'assets/images/1.png',
-      title: "Start your\n Journey with Books",
-      description: ' A World of Free Books Awaits You'),
-  const OnBoardModel(
-    imgUrl: "assets/images/2.jpg",
-    title: "Discover New Titles",
-    description: "Endless Choices, Limitless Adventures",
-  ),
-];

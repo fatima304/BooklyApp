@@ -5,9 +5,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class RatingWidget extends StatelessWidget {
   const RatingWidget({
     super.key,
-    this.mainAxisAlignment = MainAxisAlignment.start,
+    this.mainAxisAlignment = MainAxisAlignment.start, 
   });
-
+  // final int count;
+  // final int rating;
   final MainAxisAlignment mainAxisAlignment;
 
   @override

@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly_app/core/utlis/style.dart';
 import 'package:bookly_app/core/utlis/constance.dart';
@@ -7,6 +8,7 @@ import 'package:bookly_app/features/home/data/presentation/views/widgets/feature
 
 class DetailsBookSection extends StatelessWidget {
   const DetailsBookSection({super.key});
+  // final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
