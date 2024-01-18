@@ -25,7 +25,7 @@ class FeatureBookListView extends StatelessWidget {
                 ),
                 child: FeatureBookItem(
                     imageUrl:
-                        state.books[index].volumeInfo.imageLinks.thumbnail),
+                        state.books[index].volumeInfo.imageLinks?.thumbnail ?? ''),
               );
             },
           ),

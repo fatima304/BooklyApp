@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utlis/constance.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly_app/features/home/data/presentation/views/home_view.dart';
 
@@ -22,7 +23,7 @@ class SkipButton extends StatelessWidget {
         style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
-          color: Color(0xff0c136b),
+          color: kPrimaryColor,
         ),
       ),
     );
@@ -37,22 +38,22 @@ class NextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 150,
-        height: 40,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: const Color(0xff0c136b),
+      width: 150,
+      height: 40,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        color: kPrimaryColor,
+      ),
+      child: const Text(
+        "Next",
+        style: TextStyle(
+          fontSize: 20,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
         ),
-        child: const Text(
-          "Next",
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      );
+      ),
+    );
   }
 }
 
@@ -64,32 +65,31 @@ class DoneButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const HomeView(),
-            ),
-          );
-        },
-        child: Container(
-          width: 150,
-          height: 40,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: const Color(0xff0c136b),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomeView(),
           ),
-          child: const Text(
-            "Done",
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
+        );
+      },
+      child: Container(
+        width: 150,
+        height: 40,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: kPrimaryColor,
+        ),
+        child: const Text(
+          "Done",
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
-      );
+      ),
+    );
   }
 }
-

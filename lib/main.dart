@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/data/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,7 +35,7 @@ class BooklyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        home: const SplashView(),
+        home: const HomeView(),
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark().copyWith(
           textTheme: GoogleFonts.montserratTextTheme(
