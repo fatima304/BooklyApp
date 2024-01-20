@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:bookly_app/core/utlis/style.dart';
 import 'package:bookly_app/core/utlis/constance.dart';
+import 'package:bookly_app/core/utlis/app_router.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/features/home/data/presentation/views/book_details_view.dart';
 
 class NewsetBookItem extends StatelessWidget {
   const NewsetBookItem({super.key, required this.bookModel});
@@ -14,14 +15,7 @@ class NewsetBookItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return const BookDetailsView();
-            },
-          ),
-        );
+        GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: bookModel);
       },
       child: SizedBox(
         height: 120,

@@ -1,6 +1,7 @@
+import 'package:bookly_app/core/utlis/app_router.dart';
 import 'package:bookly_app/core/utlis/constance.dart';
 import 'package:flutter/material.dart';
-import 'package:bookly_app/features/home/data/presentation/views/home_view.dart';
+import 'package:go_router/go_router.dart';
 
 class SkipButton extends StatelessWidget {
   const SkipButton({
@@ -11,12 +12,7 @@ class SkipButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const HomeView(),
-          ),
-        );
+        GoRouter.of(context).push(AppRouter.kHomeView);
       },
       child: const Text(
         "Skip",
@@ -66,12 +62,7 @@ class DoneButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const HomeView(),
-          ),
-        );
+        GoRouter.of(context).push(AppRouter.kHomeView);
       },
       child: Container(
         width: 150,

@@ -1,7 +1,8 @@
+import 'package:bookly_app/core/utlis/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly_app/core/utlis/assets_file.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/slide_text.dart';
-import 'package:bookly_app/features/onboarding_screens/presentation/views/onboarding_screen.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -24,12 +25,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => OnBoarding(),
-        ),
-      );
+      GoRouter.of(context).push(AppRouter.kOnBoardingScreens);
     });
   }
 
