@@ -18,7 +18,7 @@ class NewsetBookItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.kBookDetailsView, extra: bookModel);
       },
       child: SizedBox(
-        height: 120,
+        height: 125,
         child: Row(
           children: [
             ClipRRect(
@@ -59,9 +59,6 @@ class NewsetBookItem extends StatelessWidget {
                   Text(
                     bookModel.volumeInfo.authors?[0] ?? '',
                     style: Styles.textStyle14,
-                  ),
-                  const SizedBox(
-                    height: 3,
                   ),
                   const Expanded(
                     child: Row(

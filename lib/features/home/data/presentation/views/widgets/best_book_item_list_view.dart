@@ -16,8 +16,9 @@ class BookItemListView extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: state.books.length,
             itemBuilder: (context, index) {
+              // print(state.books.length);
               return Padding(
-                padding: const EdgeInsets.only(left: 10, bottom: 16),
+                padding: const EdgeInsets.only(left: 10, bottom: 10),
                 child: NewsetBookItem(bookModel: state.books[index]),
               );
             },
