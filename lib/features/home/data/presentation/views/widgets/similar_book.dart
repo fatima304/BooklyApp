@@ -19,7 +19,7 @@ class SimiralBookSection extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 16,
+          height: 20,
         ),
         const SmallBookListView(),
       ],

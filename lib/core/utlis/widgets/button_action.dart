@@ -2,7 +2,6 @@ import 'package:bookly_app/core/utlis/functions/launch_url.dart';
 import 'package:bookly_app/core/utlis/widgets/custom_button.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class BookAction extends StatelessWidget {
   const BookAction({
@@ -15,14 +14,17 @@ class BookAction extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Expanded(
+        Expanded(
           child: CustomButton(
+            onPressed: () {
+              LaunchUrl(context, bookModel.accessInfo?.webReaderLink);
+            },
             textcolor: Colors.black,
-            radius: BorderRadius.only(
+            radius: const BorderRadius.only(
               topLeft: Radius.circular(17),
               bottomLeft: Radius.circular(17),
             ),
-            text: '19.99 £',
+            text: download(bookModel),
             color: Colors.white,
           ),
         ),
@@ -49,6 +51,14 @@ class BookAction extends StatelessWidget {
       return 'Not Available';
     } else {
       return 'Preview';
+    }
+  }
+
+  String download(BookModel bookModel) {
+    if (bookModel.accessInfo?.webReaderLink == null) {
+      return 'Not Available';
+    } else {
+      return 'Download';
     }
   }
 }

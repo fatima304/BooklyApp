@@ -20,7 +20,10 @@ class BookDetailsViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const CustomBookDetailsAppBar(),
+                const Padding(
+                  padding: EdgeInsets.only(top: 30),
+                  child: CustomBookDetailsAppBar(),
+                ),
                 DetailsBookSection(bookModel: bookModel),
                 const Expanded(
                   child: SizedBox(
@@ -29,7 +32,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 ),
                 const SimiralBookSection(),
                 const SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
               ],
             ),

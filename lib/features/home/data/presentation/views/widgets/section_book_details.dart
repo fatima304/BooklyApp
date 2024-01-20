@@ -17,7 +17,7 @@ class DetailsBookSection extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * 0.27),
+          padding: EdgeInsets.symmetric(horizontal: width * 0.25),
           child: FeatureBookItem(
               imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? ''),
         ),
