@@ -31,9 +31,10 @@ class FeatureBookListView extends StatelessWidget {
                         extra: state.books[index]);
                   },
                   child: FeatureBookItem(
-                      imageUrl:
-                          state.books[index].volumeInfo.imageLinks?.thumbnail ??
-                              ''),
+                    imageUrl: state
+                            .books[index].volumeInfo.imageLinks?.thumbnail ??
+                        ' https://altibrah.ae/img/authors/34105c8a0466f59c46d.JPG',
+                  ),
                 ),
               );
             },

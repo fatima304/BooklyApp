@@ -28,12 +28,15 @@ class NewsetBookItem extends StatelessWidget {
               child: AspectRatio(
                 aspectRatio: 2.3 / 4,
                 child: CachedNetworkImage(
-                  imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
+                  imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ??
+                      ' https://altibrah.ae/img/authors/34105c8a0466f59c46d.JPG',
                   fit: BoxFit.fill,
                   placeholder: (context, url) =>
                       const Center(child: CircularProgressIndicator()),
-                  errorWidget: (context, url, error) =>
-                      const Icon(Icons.access_alarm_outlined),
+                  errorWidget: (context, url, error) => const Image(
+                    image: NetworkImage(
+                        'https://altibrah.ae/img/authors/34105c8a0466f59c46d.JPG'),
+                  ),
                 ),
               ),
             ),
@@ -54,10 +57,10 @@ class NewsetBookItem extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    height: 3,
+                    height: 5,
                   ),
                   Text(
-                    bookModel.volumeInfo.authors?[0] ?? '',
+                    bookModel.volumeInfo.authors?[0] ?? 'عاطف منصور',
                     style: Styles.textStyle14,
                   ),
                   const Expanded(

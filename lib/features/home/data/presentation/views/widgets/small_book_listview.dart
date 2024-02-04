@@ -31,7 +31,7 @@ class SmallBookListView extends StatelessWidget {
                     child: FeatureBookItem(
                         imageUrl: state.books[index].volumeInfo.imageLinks
                                 ?.thumbnail ??
-                            ''),
+                            ' '),
                   ),
                 );
               },

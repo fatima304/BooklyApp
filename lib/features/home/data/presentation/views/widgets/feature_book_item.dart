@@ -19,8 +19,10 @@ class FeatureBookItem extends StatelessWidget {
           fit: BoxFit.fill,
           placeholder: (context, url) =>
               const Center(child: CircularProgressIndicator()),
-          errorWidget: (context, url, error) =>
-              const Icon(Icons.access_alarm_outlined),
+          errorWidget: (context, url, error) => const Image(
+            image: NetworkImage(
+                'https://altibrah.ae/img/authors/34105c8a0466f59c46d.JPG'),
+          ),
         ),
       ),
     );

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:bookly_app/core/utlis/style.dart';
 import 'package:bookly_app/core/utlis/constance.dart';
 import 'package:bookly_app/core/utlis/widgets/button_action.dart';
-import 'package:bookly_app/features/home/data/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/data/presentation/views/widgets/feature_book_item.dart';
 
 class DetailsBookSection extends StatelessWidget {
@@ -19,7 +18,8 @@ class DetailsBookSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.25),
           child: FeatureBookItem(
-              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? ''),
+              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ??
+                  ' https://altibrah.ae/img/authors/34105c8a0466f59c46d.JPG'),
         ),
         const SizedBox(
           height: 20,
@@ -38,7 +38,7 @@ class DetailsBookSection extends StatelessWidget {
         Opacity(
           opacity: 0.7,
           child: Text(
-            bookModel.volumeInfo.authors?[0] ?? '',
+            bookModel.volumeInfo.authors?[0] ?? 'عاطف منصور',
             style: Styles.textStyle18.copyWith(
                 fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
           ),
@@ -46,9 +46,9 @@ class DetailsBookSection extends StatelessWidget {
         const SizedBox(
           height: 6,
         ),
-        const RatingWidget(
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
+        // const RatingWidget(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        // ),
         const SizedBox(
           height: 18,
         ),
